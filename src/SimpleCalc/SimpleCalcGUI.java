@@ -10,6 +10,10 @@ public class SimpleCalcGUI extends JFrame{
     private JTextField tfNumber2;
     private JTextField lblResult;
 
+    public SimpleCalcGUI() {
+        
+    }
+
 
     public static void main(String[] args) {
         SimpleCalcGUI calc = new SimpleCalcGUI();
