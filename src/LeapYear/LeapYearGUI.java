@@ -20,5 +20,16 @@ public class LeapYearGUI extends JFrame {
         leap.setTitle("Leap Year Checker");
 
     }
+
+    public void checker() {
+        int year = Integer.parseInt(tfYear.getText());
+
+        if((((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0) && year > 0)) {
+            JOptionPane.showMessageDialog(pnlMain, "Leap year");
+        }
+        else {
+            JOptionPane.showMessageDialog(pnlMain, "Not a leap Year");
+        }
+    }
 }
 
