@@ -9,6 +9,22 @@ public class LeapYearGUI extends JFrame {
     private JTextField tfYear;
     private JButton btnCheckYear;
 
+    public LeapYearGUI() {
+        btnCheckYear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    checker();
+                }
+                catch (NumberFormatException a) {
+                    JOptionPane.showMessageDialog(pnlMain, "Input must be a number!");
+                }
+                catch(Exception a) {
+                    JOptionPane.showMessageDialog(pnlMain, "Input an appropriate number");
+                }
+            }
+        });
+    }
 
     public static void main(String[] args) {
         LeapYearGUI leap = new LeapYearGUI();
