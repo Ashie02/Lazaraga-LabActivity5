@@ -17,10 +17,10 @@ public class LeapYearGUI extends JFrame {
                     checker();
                 }
                 catch (NumberFormatException a) {
-                    JOptionPane.showMessageDialog(pnlMain, "Input must be a number!");
+                    JOptionPane.showMessageDialog(pnlMain, "Input must be an appropriate number!");
                 }
                 catch(Exception a) {
-                    JOptionPane.showMessageDialog(pnlMain, "Input an appropriate number");
+                    JOptionPane.showMessageDialog(pnlMain, "Input must be an appropriate number!");
                 }
             }
         });
