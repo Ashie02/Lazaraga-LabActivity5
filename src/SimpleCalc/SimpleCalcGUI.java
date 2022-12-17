@@ -22,7 +22,7 @@ public class SimpleCalcGUI extends JFrame{
                 catch (NumberFormatException a) {
                     JOptionPane.showMessageDialog(pnlMain, "Invalid Operation");
                 } catch (divZero ex) {
-                    JOptionPane.showMessageDialog(pnlMain, "Invalid Operation!");
+                    JOptionPane.showMessageDialog(pnlMain, "Number cannot be divided by zero!");
                 }
             }
         });
