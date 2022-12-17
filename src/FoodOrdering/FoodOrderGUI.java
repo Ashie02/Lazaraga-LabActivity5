@@ -42,14 +42,11 @@ public class FoodOrderGUI  extends JFrame{
         btnOrder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(rbNone.isSelected()) {
+                try {
                     JOptionPane.showMessageDialog(pnlMain, String.format("The total price is Php %.2f", calcTotal()));
                 }
-                else if(rb5.isSelected() || rb10.isSelected() || rb15.isSelected()) {
-                    JOptionPane.showMessageDialog(pnlMain, String.format("The total price is Php %.2f", calcDiscount()));
-                }
-                else {
-                    JOptionPane.showMessageDialog(pnlMain, String.format("The total price is Php %.2f", calcTotal()));
+                catch (Exception a) {
+                    JOptionPane.showMessageDialog(pnlMain,"There is an error found!");
                 }
             }
         });
@@ -95,23 +92,17 @@ public class FoodOrderGUI  extends JFrame{
             total += prize;
         }
 
-        return total;
-    }
-
-    public double calcDiscount() {
-        float initial = (float) calcTotal();
-        float finPrice = 0;
+        float initial = total;
 
         if(rb5.isSelected()) {
-            finPrice = (float)(initial * .95);
+            total = (float)(initial * .95);
         }
         else if(rb10.isSelected()) {
-            finPrice = (float) (initial * .90);
+            total = (float) (initial * .90);
         }
         else if(rb15.isSelected()) {
-            finPrice = (float) (initial * .85);
+            total = (float) (initial * .85);
         }
-        return finPrice;
-
+        return total;
     }
 }
