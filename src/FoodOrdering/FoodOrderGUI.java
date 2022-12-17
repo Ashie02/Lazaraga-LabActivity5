@@ -45,8 +45,11 @@ public class FoodOrderGUI  extends JFrame{
                 if(rbNone.isSelected()) {
                     JOptionPane.showMessageDialog(pnlMain, String.format("The total price is Php %.2f", calcTotal()));
                 }
-                else {
+                else if(rb5.isSelected() || rb10.isSelected() || rb15.isSelected()) {
                     JOptionPane.showMessageDialog(pnlMain, String.format("The total price is Php %.2f", calcDiscount()));
+                }
+                else {
+                    JOptionPane.showMessageDialog(pnlMain, String.format("The total price is Php %.2f", calcTotal()));
                 }
             }
         });
@@ -108,7 +111,7 @@ public class FoodOrderGUI  extends JFrame{
         else if(rb15.isSelected()) {
             finPrice = (float) (initial * .85);
         }
-
         return finPrice;
+
     }
 }
